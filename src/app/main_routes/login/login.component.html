@@ -1,0 +1,14 @@
+<div class="main_login">
+  <div class="card_login">
+    <div class="txt-log">CASA DEL INQUILINO</div>
+    <form class="ins">
+      <input type="text" value="" #mail placeholder="Usuario">
+      <input type="password" value="" #pass placeholder="Contraseña">
+      <div class="btn-work" (click)="login(mail.value,pass.value)">Continuar</div>
+    </form>
+  </div>
+</div>
+
+<div class="snack" [ngClass]="{'act': snacktive }">
+  <!--<div class="card">{{msg}}</div>-->
+</div>

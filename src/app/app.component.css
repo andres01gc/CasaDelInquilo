@@ -1,0 +1,7 @@
+.main_screen {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #e7e8ec;
+}
