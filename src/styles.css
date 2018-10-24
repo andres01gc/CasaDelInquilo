@@ -22,18 +22,19 @@ html {
 }
 
 .main_cnt {
-  background-color: coral;
+  /*background-color: coral;*/
   /*padding-left: 20em;*/
-  width: auto;
+  /*width: auto;*/
   height: auto;
+  width: 100%;
 }
 
 @media (min-width: 40em) {
-
   .main_cnt {
-    padding-left: 20em;
-    background-color: coral;
+    margin-left: 20em;
+    /*padding-left: 20em;*/
+    width: 100%;
+    /*background-color: coral;*/
     /*padding-left: 20em;*/
   }
-
 }

@@ -68,13 +68,13 @@
 }
 
 @media (min-width: 40em) {
-
   .sidebar-opened {
     width: 20em;
     background-color: white;
     flex-direction: column;
     height: calc(100%);
     padding-top: 4em;
+    position: fixed;
   }
 
   .nav_main_bar {
