@@ -74,7 +74,7 @@
     background-color: white;
     flex-direction: column;
     height: calc(100%);
-
+    padding-top: 4em;
   }
 
   .nav_main_bar {

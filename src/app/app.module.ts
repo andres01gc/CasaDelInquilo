@@ -7,31 +7,35 @@ import {RouterModule, Routes} from '@angular/router';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import {HomeDueComponent} from './main_routes/home-due/home-due.component';
-import {HomeAdmComponent} from './main_routes/home-adm/home-adm.component';
+import {MainDueComponent} from './main_routes/main-due/main-due.component';
+import {MainAdmComponent} from './main_routes/main-adm/main-adm.component';
 import locateEs from '@angular/common/locales/es-MX';
 import {registerLocaleData} from '@angular/common';
 import {CasaDueComponent} from './casa-due/casa-due.component';
 import {ContaGeneralDueComponent} from './conta-general-due/conta-general-due.component';
 import {HabiAdmComponent} from './habi-adm/habi-adm.component';
 import {ContaAdmComponent} from './conta-adm/conta-adm.component';
+import {HomeDueComponent} from './home-due/home-due.component';
+import {HomeAdmComponent} from './home-adm/home-adm.component';
 
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', component: LoginComponent},
   {
-    path: 'adm', component: HomeAdmComponent, children: [
+    path: 'adm', component: MainAdmComponent, children: [
+      {path: '', component: HomeAdmComponent},
       {path: 'habitacion', component: HabiAdmComponent},
       {path: 'contabilidad_general', component: ContaAdmComponent}
     ]
   },
   {
-    path: 'due', component: HomeDueComponent, children: [
+    path: 'due', component: MainDueComponent, children: [
+      {path: '', component: HomeDueComponent},
       {
         path: 'casa', component: CasaDueComponent, children: []
       },
-      {path: 'contanilidad_general', component: ContaGeneralDueComponent},
+      {path: 'contabilidad_general', component: ContaGeneralDueComponent},
     ]
   }];
 
@@ -56,15 +60,17 @@ registerLocaleData(locateEs);
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    HomeDueComponent,
-    HomeAdmComponent,
+    MainDueComponent,
+    MainAdmComponent,
     CasaDueComponent,
     ContaGeneralDueComponent,
     HabiAdmComponent,
     ContaAdmComponent,
+    HomeDueComponent,
+    HomeAdmComponent,
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes), AngularFireModule.initializeApp(config), AngularFirestoreModule, AngularFireAuthModule
+    BrowserModule, RouterModule.forRoot(appRoutes, {enableTracing: true}), AngularFireModule.initializeApp(config), AngularFirestoreModule, AngularFireAuthModule
   ],
   providers: [{provide: 'es-MX', useValue: 'es'}],
   bootstrap:

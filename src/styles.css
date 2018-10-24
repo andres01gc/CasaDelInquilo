@@ -24,6 +24,8 @@ html {
 .main_cnt {
   background-color: coral;
   /*padding-left: 20em;*/
+  width: auto;
+  height: auto;
 }
 
 @media (min-width: 40em) {
