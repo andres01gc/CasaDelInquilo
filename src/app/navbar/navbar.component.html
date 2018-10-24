@@ -1,3 +1,25 @@
-<p>
-  navbar works!
-</p>
+<div class="nav_main_bar">
+  <!--TODO realizar una animacion cooqueta con este menu-->
+  <div class="menu" (click)="menu_state=!menu_state">
+    <img src="assets/navbar/menu.svg" alt="Menú" class="menu-img">
+  </div>
+  <div class="mn">
+    <div class="main_name">
+      Casa del Inquilino
+    </div>
+    <div>{{today | date:'dd MMMM yyyy, hh:mm:ss a':'+0530': 'es-MX'}}</div>
+  </div>
+</div>
+
+<div class="msp">s</div>
+<!--[ngClass]="menu_state ? 'sidebar-opened' : 'sidebar-closed'"-->
+
+<div [ngClass]="menu_state ? 'sidebar-opened' : 'sidebar-closed'">
+  holi
+</div>
+
+<!--este se usara, suponiendo que el diseño del menu es inferior al ancho-->
+
+<!--<div class="shadow" [ngClass]="menu_state ? 'shadow-opened' : 'shadow-closed'">-->
+<!--</div>-->
+

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {formatDate} from '@angular/common';
+
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  menu_state = true;
+  today = Date.now();
+  fixedTimezone = this.today;
+  todayFormated = '';
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.comprobarMenu();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.comprobarMenu();
+  }
+
+  comprobarMenu() {  // el menú siempre estará abierto en modo escritorio
+    if (window.innerWidth > 640) {
+      this.menu_state = true;
+    } else {
+      this.menu_state = false;
+    }
+  }
 }

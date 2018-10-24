@@ -4,3 +4,34 @@
   margin: 0;
   font-family: 'PT Sans Narrow', sans-serif;
 }
+
+body {
+  -webkit-tap-highlight-color: #ccc;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  -webkit-tap-highlight-color: #ccc;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main_cnt {
+  background-color: coral;
+  /*padding-left: 20em;*/
+}
+
+@media (min-width: 40em) {
+
+  .main_cnt {
+    padding-left: 20em;
+    background-color: coral;
+    /*padding-left: 20em;*/
+  }
+
+}
