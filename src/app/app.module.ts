@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   {
     path: 'adm', component: MainAdmComponent, children: [
       {path: '', component: HomeAdmComponent},
-      {path: 'habitacion', component: HabiAdmComponent},
+      {path: 'habitacion/:habt', component: HabiAdmComponent},
       {path: 'contabilidad_general', component: ContaAdmComponent}
     ]
   },
@@ -69,8 +69,7 @@ registerLocaleData(locateEs);
     HomeDueComponent,
     HomeAdmComponent,
   ],
-  imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes, {enableTracing: true}), AngularFireModule.initializeApp(config), AngularFirestoreModule, AngularFireAuthModule
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes, {enableTracing: true}), AngularFireModule.initializeApp(config), AngularFirestoreModule, AngularFireAuthModule
   ],
   providers: [{provide: 'es-MX', useValue: 'es'}],
   bootstrap:

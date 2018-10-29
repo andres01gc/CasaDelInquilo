@@ -59,12 +59,15 @@
 }
 
 .sidebar-opened {
-  position: absolute;
+  /*position: absolute;*/
   background-color: white;
   width: 80%;
   height: calc(100% - 4em);
   display: flex;
   flex-direction: column;
+  position: fixed;
+  overflow: scroll;
+
 }
 
 @media (min-width: 40em) {
@@ -75,6 +78,7 @@
     height: calc(100%);
     padding-top: 4em;
     position: fixed;
+    z-index: 200;
 
   }
 
