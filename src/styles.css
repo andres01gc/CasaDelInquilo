@@ -22,19 +22,21 @@ html {
 }
 
 .main_cnt {
-  /*background-color: coral;*/
-  /*padding-left: 20em;*/
-  /*width: auto;*/
   height: auto;
+  margin: 0;
   width: 100%;
 }
 
 @media (min-width: 40em) {
   .main_cnt {
     margin-left: 20em;
-    /*padding-left: 20em;*/
-    width: 100%;
+    width: auto;
+    /*flex-grow: 2;*/
+    /*// EL PROBLEMA SOS VOS PUTO!*/
+    /*width:;*/
+    /*flex-basis: 2;*/
     /*background-color: coral;*/
+
     /*padding-left: 20em;*/
   }
 }
