@@ -39,9 +39,12 @@ const appRoutes: Routes = [
     ]
   }];
 
-// {path: '', component: UserServiciosComponent},
-// {path: 'contabilidad', component: UserServiciosComponent},
-// {path: 'ajustes', component: UserServiciosComponent},
+//
+// const appRoutesV2: Routes = [
+//   {path: 'dashboard', component: DashboardComponent},
+//   {path: 'users', component: usersComponent},
+//   {path: '*', redirectTo: '/'},
+// ];
 
 
 const config = {

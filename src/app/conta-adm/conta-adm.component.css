@@ -1,0 +1,4 @@
+.dia_acum {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,17 @@
+<app-navbar>
+  <!--<div class="bt" (click)="abrirHabitacion()"> Boton Habitacion</div>-->
+  <div class="habi_tit">Habitaciones</div>
+
+  <div class="habi_content">
+    <div class="habi" *ngFor='let in of counter(cantidadHabitaciones) ;let i = index' (click)="abrirHabitacion(i)">
+      <div>{{i+1}}</div>
+    </div>
+  </div>
+  <div class="bt" (click)="abrirContaGene()"> Contabilidad General</div>
+  <div class="bt" (click)="cerrarCuenta()"> Salir</div>
+</app-navbar>
+
+<div class="main_cnt">
+  <router-outlet></router-outlet>
+</div>
+

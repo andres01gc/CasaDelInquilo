@@ -67,7 +67,6 @@
   flex-direction: column;
   position: fixed;
   overflow: scroll;
-
 }
 
 @media (min-width: 40em) {
@@ -79,7 +78,6 @@
     padding-top: 4em;
     position: fixed;
     z-index: 200;
-
   }
 
   .nav_main_bar {

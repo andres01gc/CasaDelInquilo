@@ -1,0 +1,164 @@
+:host {
+  width: 100%;
+  /*height: 100%;*/
+  display: flex;
+}
+
+.cnt {
+  /*margin: 1em;*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info_habi_img {
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 8em;
+  height: 8em;
+  display: flex;
+  border-radius: 5em;
+  margin: 1em;
+}
+
+.hb_ttl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bt_atras {
+  margin: 1em;
+  cursor: pointer;
+  opacity: .5;
+}
+
+.bt_atras:hover {
+  opacity: 8;
+}
+
+.info_habi__container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.info_habi_nombre {
+  font-size: 2em;
+  font-weight: bold
+}
+
+.ja {
+  font-size: 3em;
+}
+
+.sas {
+  display: flex;
+  align-items: center;
+}
+
+.nuevo_pago_cnt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #cccccc;
+  padding: .5em;
+  width: auto;
+  justify-content: space-around;
+}
+
+.pago {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: .5em;
+  width: auto;
+  justify-content: space-between;
+}
+
+.valor {
+  padding: .5em;
+  font-size: 1.1em;
+  border-radius: .2em;
+  border: rgba(0, 0, 0, 0);
+  flex-grow: 2;
+}
+
+.sa {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.hou {
+  display: flex;
+  flex-direction: row;
+}
+
+.saldo_cnt {
+  font-weight: bold;
+}
+
+.dias {
+  font-weight: bold;
+}
+
+.info_habi_tipo_doc {
+  /*font-weight: bold*/
+}
+
+.doc_cnt {
+  font-size: 1em;
+
+}
+
+.info_habi_tipo_doc {
+  margin-right: .2em;
+  font-weight: bold;
+}
+
+.doc_cnt {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2em;
+}
+
+.bt_finalizar {
+  padding: .5em;
+  background-color: rgba(255, 127, 80, 0.8);
+  border-radius: .2em;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  /*opacity: .5;*/
+  margin-top: .5em;
+  /*z-index: -10;*/
+}
+
+.bt_finalizar:hover {
+  opacity: .8;
+}
+
+.agregar {
+  margin-left: .5em;
+  padding: .5em;
+  background-color: rgba(255, 127, 80, 0.78);
+  border-radius: .2em;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ns {
+  margin: .5em;
+}
+
+.sss {
+  margin-left: .5em;
+}
+
+/*.bt_finalizar:active {*/
+/*opacity: 1;*/
+/*}*/
