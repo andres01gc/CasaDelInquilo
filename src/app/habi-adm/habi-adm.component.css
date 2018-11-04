@@ -13,17 +13,23 @@
 
 .info_habi_img {
   background-color: rgba(0, 0, 0, 0.05);
-  width: 8em;
-  height: 8em;
+  width: 5em;
+  height: 5em;
   display: flex;
   border-radius: 5em;
   margin: 1em;
+}
+
+.ttl_hb {
+  font-weight: bold;
 }
 
 .hb_ttl {
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 1em;
 }
 
 .bt_atras {
@@ -36,17 +42,19 @@
   opacity: 8;
 }
 
-.info_habi__container {
-  margin-top: 1em;
+.info_habi_container {
+  margin: 1em;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   flex-wrap: wrap;
+  width: auto;
+  /*background-color: blue;*/
 }
 
 .info_habi_nombre {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold
 }
 
@@ -63,10 +71,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #cccccc;
+  /*background-color: #cccccc;*/
   padding: .5em;
+  margin: 1em;
   width: auto;
-  justify-content: space-around;
+  border: 1px solid #cecece;
+  border-radius: .2em;
+  /*justify-content: space-around;*/
 }
 
 .pago {
@@ -84,7 +95,9 @@
   font-size: 1.1em;
   border-radius: .2em;
   border: rgba(0, 0, 0, 0);
-  flex-grow: 2;
+  background-color: #f9f9f9;
+  font-weight: bold;
+  /*flex-grow: 1;*/
 }
 
 .sa {
@@ -105,13 +118,14 @@
   font-weight: bold;
 }
 
-.info_habi_tipo_doc {
-  /*font-weight: bold*/
+.datos_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.doc_cnt {
-  font-size: 1em;
-
+.info_habi_tipo_doc {
+  /*font-weight: bold*/
 }
 
 .info_habi_tipo_doc {
@@ -122,7 +136,7 @@
 .doc_cnt {
   display: flex;
   flex-direction: row;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .bt_finalizar {
@@ -137,6 +151,14 @@
   /*z-index: -10;*/
 }
 
+.select_sus {
+  border-radius: .2em;
+  border: 1px solid #cecece;
+  padding: .2em;
+  font-weight: bold;
+  margin-top: .3em;
+}
+
 .bt_finalizar:hover {
   opacity: .8;
 }
@@ -148,15 +170,28 @@
   border-radius: .2em;
   color: white;
   text-align: center;
+  font-weight: bold;
   cursor: pointer;
 }
 
 .ns {
   margin: .5em;
+  /*font-weight: bold;*/
+  font-size: 1.2em;
 }
 
 .sss {
   margin-left: .5em;
+}
+
+@media (min-width: 40em) {
+
+  .datos_content {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+  }
+
 }
 
 /*.bt_finalizar:active {*/

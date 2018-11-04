@@ -1,7 +1,70 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /*background-color: black;*/
+}
+
 .bt {
   margin: .5em;
   padding: .5em;
   cursor: pointer;
   background-color: aliceblue;
 }
+
+.nombre {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.img_due {
+  width: 3em;
+  height: 3em;
+  margin: .5em;
+  background-color: #cccccc;
+  border-radius: 5em;
+}
+
+.casa_cnt {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3em;
+  /*width: auto;*/
+  padding: 1em;
+  /*background-color: #cccccc;*/
+}
+
+.im_g {
+  width: 2em;
+  height: 2em;
+
+}
+
+.casa_cnt:hover {
+  background-color: #bad3e8;
+
+}
+
+.casa_selected {
+  -webkit-box-shadow: inset -200px 0px 2px -192px rgba(252, 164, 48, 1);
+  -moz-box-shadow: inset -200px 0px 2px -192px rgba(252, 164, 48, 1);
+  box-shadow: inset -200px 0px 2px -192px rgba(252, 164, 48, 1);
+  background-color: #f9f9f9;
+}
+
+.tt {
+  padding: 1em;
+}
+
+.due_info_cnt {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
 
