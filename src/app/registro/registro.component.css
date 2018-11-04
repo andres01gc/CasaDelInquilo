@@ -1,0 +1,108 @@
+.main_login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+.logo {
+  width: 20em;
+  margin: 1em;
+  /*margin: 0 auto;*/
+}
+
+.txt-log {
+  text-align: center;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 2em;
+}
+
+.ins {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 5px;
+  /*align-items: center;*/
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.l {
+  background-color: #f7f7f7;
+}
+
+input {
+  text-align: center;
+  border-radius: .2em;
+  border: none;
+  height: 3rem;
+  padding-left: .5rem;
+  font-size: 1em;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0);
+  /*background-color: #f7f7f7;*/
+}
+
+.lgn_logo_conatiner {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.btn-work:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.btn-work:active {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.card_login {
+  width: 90%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -70%);
+  /*background-color: #DB3650;*/
+}
+
+.btn-work {
+  margin-top: .5em;
+  height: 2.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .1em;
+  color: white;
+  font-size: 1.2em;
+  background-color: #3a3a3a;
+  /*border: 2px solid coral;*/
+}
+
+@media (min-width: 40em) {
+  .card_login {
+    width: 40em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%);
+    /*background-color: #3a3a3a;*/
+  }
+
+  .logo {
+    width: 35em;
+    margin: 5em;
+  }
+}
+
+
+

@@ -8,13 +8,28 @@ import {DbService} from '../../db.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(public router: Router) {
+  constructor(private db: DbService, public router: Router) {
   }
 
   ngOnInit() {
   }
 
   login(user: string, pass: string) {
-    // this.fireAtuh.login(user, pass);
+    console.log('intentando loguear');
+    this.db.login(user, pass, infoUser => {
+      if (infoUser !== null) {
+        // login exitoso!
+        console.log(infoUser);
+        switch (infoUser.cargo) {
+          case 'due':
+            this.router.navigate(['due']);
+            break;
+
+          case 'adm':
+            this.router.navigate(['adm']);
+            break;
+        }
+      }
+    });
   }
 }

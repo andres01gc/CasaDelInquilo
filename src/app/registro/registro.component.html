@@ -1,0 +1,19 @@
+<div class="main_login">
+  <div class="card_login">
+    <img class="logo" src="assets/common/logo.svg" alt="Moena 1989">
+    <div class="txt-log">Registro de ingreso (beta)</div>
+    <form class="ins">
+
+      <div class="l">
+        <input type="email" value="" #mail placeholder="Correo">
+        <input type="password" value="" #contra placeholder="Contraseña">
+        <input type="text" value="" #nombre placeholder="Nombre">
+        <input type="text" value="" #apellidos placeholder="Apellidos">
+      </div>
+
+      <div class="btn-work" (click)="registrarUser(mail.value,contra.value,nombre.value, apellidos.value)">Ingresar
+      </div>
+
+    </form>
+  </div>
+</div>

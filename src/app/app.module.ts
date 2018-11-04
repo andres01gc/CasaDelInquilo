@@ -18,7 +18,10 @@ import {HomeCasaComponent} from './home-casa/home-casa.component';
 import {ConfigCasaComponent} from './config-casa/config-casa.component';
 import {RegistroComponent} from './registro/registro.component';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {registerLocaleData} from '@angular/common';
+import mx from '@angular/common/locales/es-MX';
 
+registerLocaleData(mx, 'es-MX');
 
 const appRoutes: Routes = [
   {path: 'reg', component: RegistroComponent},
