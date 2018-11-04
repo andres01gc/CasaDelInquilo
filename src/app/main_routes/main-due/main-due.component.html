@@ -1,17 +1,13 @@
 <app-navbar>
-  <div class="due_info_cnt">
+  <div class="due_info_cnt" routerLink="../due">
     <div class="img_due"></div>
     <div class="cargo">Dueño</div>
     <div class="nombre">Albeiro Pabón</div>
   </div>
 
-
-  <!--<div class="bt" > Boton cassas</div>-->
-  <!--<div class="bt" (click)="abrirContabilidadGeneral()"> Contabilidad General</div>-->
-  <!--<div class="bt" (click)="cerrarSesion()"> Salir</div>-->
   <h4 class="tt">Casas disponibles</h4>
 
-  <div class="casa_cnt" (click)="AbrirCasa()">
+  <div class="casa_cnt" (click)="AbrirCasa('1')">
     <div class="im_g"></div>
     <div>
       <div class="nombre">San Bosco</div>
@@ -19,7 +15,7 @@
     </div>
   </div>
 
-  <div class="casa_cnt casa_selected" (click)="AbrirCasa()">
+  <div class="casa_cnt casa_selected" (click)="AbrirCasa('2')">
     <div class="im_g"></div>
     <div>
       <div class="nombre">San Bosco</div>
@@ -28,7 +24,7 @@
   </div>
 
 
-  <div class="casa_cnt" (click)="AbrirCasa()">
+  <div class="casa_cnt" routerLink="nueva_casa">
     <div class="im_g"></div>
     <div>
       <div class="cargo">Agregar nueva casa</div>
@@ -41,5 +37,3 @@
 <div class="main_cnt">
   <router-outlet></router-outlet>
 </div>
-
-

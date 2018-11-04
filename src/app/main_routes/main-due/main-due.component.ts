@@ -14,8 +14,8 @@ export class MainDueComponent implements OnInit {
   ngOnInit() {
   }
 
-  AbrirCasa() {
-    this.router.navigate(['./due/casa']);
+  AbrirCasa(id: string) {
+    this.router.navigate(['due/casa', id]);
   }
 
   abrirContabilidadGeneral() {

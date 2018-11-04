@@ -67,4 +67,8 @@
   justify-content: center;
 }
 
+.due_info_cnt:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
 

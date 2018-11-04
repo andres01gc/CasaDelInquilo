@@ -20,6 +20,7 @@ import {RegistroComponent} from './registro/registro.component';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {registerLocaleData} from '@angular/common';
 import mx from '@angular/common/locales/es-MX';
+import {NuevaCasaComponent} from './nueva-casa/nueva-casa.component';
 
 registerLocaleData(mx, 'es-MX');
 
@@ -29,21 +30,31 @@ const appRoutes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {
     path: 'adm', component: MainAdmComponent, children: [
-      {path: '', component: HomeAdmComponent},
+      {path: 'home', component: HomeAdmComponent},
       {path: 'habitacion/:habt', component: HabiAdmComponent},
       {path: 'contabilidad_general', component: ContaAdmComponent}
     ]
   }, {
     path: 'due', component: MainDueComponent, children: [
-      {path: '', component: HomeDueComponent}, {
-        path: 'casa', component: CasaDueComponent, children: [
-          {path: '', redirectTo: 'due/casa/home', pathMatch: 'full'},
+      {path: 'home', component: HomeDueComponent},
+      {path: 'nueva_casa', component: NuevaCasaComponent},
+      {
+        path: 'casa/:id_casa', component: CasaDueComponent, children: [
+          {path: '', redirectTo: 'home', pathMatch: 'full'},
           {path: 'home', component: HomeCasaComponent},
-          {path: 'config', component: ConfigCasaComponent}]
+          {path: 'config', component: ConfigCasaComponent}
+        ]
       },
-      {path: 'contabilidad_general', component: ContaGeneralDueComponent}]
-  }];
+      {path: 'contabilidad_general', component: ContaGeneralDueComponent},
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+    ]
+  }]
+;
 
+// {
+//   path: '', component: CasaDueComponent, children: [
+
+// },
 
 const config = {
   apiKey: 'AIzaSyCVsmyQhQDfKlO1HREEshd0V_IiVP1CGmE',
@@ -70,6 +81,7 @@ const config = {
     HomeCasaComponent,
     ConfigCasaComponent,
     RegistroComponent,
+    NuevaCasaComponent,
   ],
   imports: [BrowserModule,
     RouterModule.forRoot(appRoutes, {enableTracing: false}),
