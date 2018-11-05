@@ -2,24 +2,15 @@
   <div class="due_info_cnt" routerLink="../due">
     <div class="img_due"></div>
     <div class="cargo">Dueño</div>
-    <div class="nombre">Albeiro Pabón</div>
+    <div class="nombre">{{info_user.name +' '+ info_user.last_name}}</div>
   </div>
-
   <h4 class="tt">Casas disponibles</h4>
 
-  <div class="casa_cnt" (click)="AbrirCasa('1')">
+  <div class="casa_cnt" *ngFor="let c of casas" (click)="AbrirCasa(c)">
     <div class="im_g"></div>
     <div>
-      <div class="nombre">San Bosco</div>
-      <div class="cargo">14/12 habitaciones</div>
-    </div>
-  </div>
-
-  <div class="casa_cnt casa_selected" (click)="AbrirCasa('2')">
-    <div class="im_g"></div>
-    <div>
-      <div class="nombre">San Bosco</div>
-      <div class="cargo">14/12 habitaciones</div>
+      <div class="nombre">{{c.nombre}}</div>
+      <div class="cargo">{{c.dir}}</div>
     </div>
   </div>
 

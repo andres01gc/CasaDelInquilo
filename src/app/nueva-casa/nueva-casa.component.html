@@ -1,0 +1,9 @@
+<div>Registro de nueva casa</div>
+
+<form action="">
+  <input type="text" #nombre placeholder="Nombre de la casa">
+  <input type="text" #dir placeholder="Dirección">
+  <input type="number" #habi placeholder="# de habitaciones">
+</form>
+
+<button (click)="registrarCasa(nombre.value, dir.value, habi.value)">Registrar nueva casa</button>
