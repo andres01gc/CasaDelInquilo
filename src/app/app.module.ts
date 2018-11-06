@@ -21,6 +21,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {registerLocaleData} from '@angular/common';
 import mx from '@angular/common/locales/es-MX';
 import {NuevaCasaComponent} from './nueva-casa/nueva-casa.component';
+import {CardResumenDiaComponent} from './card-resumen-dia/card-resumen-dia.component';
+import {HttpClientModule} from '@angular/common/http';
 
 registerLocaleData(mx, 'es-MX');
 
@@ -82,13 +84,15 @@ const config = {
     ConfigCasaComponent,
     RegistroComponent,
     NuevaCasaComponent,
+    CardResumenDiaComponent,
+
   ],
   imports: [BrowserModule,
     RouterModule.forRoot(appRoutes, {enableTracing: false}),
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
   providers: [],
   bootstrap:

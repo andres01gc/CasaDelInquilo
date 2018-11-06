@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./main-adm.component.css']
 })
 export class MainAdmComponent implements OnInit {
-  cantidadHabitaciones = 34;
+  cantidadHabitaciones = 50;
 
   constructor(private router: Router) {
   }
@@ -31,5 +31,4 @@ export class MainAdmComponent implements OnInit {
   counter(i: number) {
     return new Array(i);
   }
-
 }

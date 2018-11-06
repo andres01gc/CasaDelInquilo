@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {DbService} from '../db.service';
 
+
 @Component({
   selector: 'app-casa-due',
   templateUrl: './casa-due.component.html',
@@ -31,5 +32,4 @@ export class CasaDueComponent implements OnInit, OnDestroy {
     this.susInfoCasa.unsubscribe();
     this.sus_habi.unsubscribe();
   }
-
 }

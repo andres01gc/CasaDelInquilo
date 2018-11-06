@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
 
-
   font-family: 'Oxygen', sans-serif;
 
 }
@@ -22,6 +21,12 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
+}
+
+.line {
+  display: flex;
+  height: 1px;
+  background-color: #cccccc;
 }
 
 .main_cnt {
