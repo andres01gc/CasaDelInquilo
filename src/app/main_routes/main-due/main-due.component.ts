@@ -13,6 +13,7 @@ export class MainDueComponent implements OnInit, OnDestroy {
   info_user: any;
   private _casas: Observable<any[]>;
   casas: any[];
+  casaSelected: any;
 
   constructor(private db: DbService, private router: Router) {
     this._casas = this.db.getCasasUsuarioOb();
@@ -22,12 +23,12 @@ export class MainDueComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this._casas.subscribe(cs => {
       this.casas = cs;
-      // console.log('casas:');
       console.log(this.casas);
     });
   }
 
   AbrirCasa(casa: any) {
+    this.casaSelected = casa;
     this.router.navigate(['due/casa', casa.id]);
   }
 

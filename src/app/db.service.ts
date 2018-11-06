@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {AngularFireDatabase} from '@angular/fire/database';
+import {s} from '@angular/core/src/render3';
 
 @Injectable({
   providedIn: 'root'
@@ -105,5 +106,9 @@ export class DbService {
     // this.item$ = this.db.object<Item>('/item').valueChanges().subscribe(item => console.log(item));
     console.log(this._user.uid);
     return this.db.list('dues/' + this._user.uid + '/casas').valueChanges();
+  }
+
+  susbInfoCasa(id_casa: string): Observable<any | null> {
+    return this.db.object('casas/' + id_casa).valueChanges();
   }
 }

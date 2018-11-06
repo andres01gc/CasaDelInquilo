@@ -1,12 +1,13 @@
 <app-navbar>
-  <div class="due_info_cnt" routerLink="../due">
+  <div class="due_info_cnt" routerLink="../due" (click)="casaSelected={}">
     <div class="img_due"></div>
     <div class="cargo">Dueño</div>
     <div class="nombre">{{info_user.name +' '+ info_user.last_name}}</div>
   </div>
+
   <h4 class="tt">Casas disponibles</h4>
 
-  <div class="casa_cnt" *ngFor="let c of casas" (click)="AbrirCasa(c)">
+  <div class="casa_cnt" *ngFor="let c of casas" (click)="AbrirCasa(c)" [class.casa_selected]="casaSelected===c">
     <div class="im_g"></div>
     <div>
       <div class="nombre">{{c.nombre}}</div>
@@ -14,8 +15,7 @@
     </div>
   </div>
 
-
-  <div class="casa_cnt" routerLink="nueva_casa">
+  <div class="casa_cnt" routerLink="nueva_casa" (click)="casaSelected={}">
     <div class="im_g"></div>
     <div>
       <div class="cargo">Agregar nueva casa</div>
