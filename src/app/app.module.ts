@@ -23,6 +23,7 @@ import mx from '@angular/common/locales/es-MX';
 import {NuevaCasaComponent} from './nueva-casa/nueva-casa.component';
 import {CardResumenDiaComponent} from './card-resumen-dia/card-resumen-dia.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 registerLocaleData(mx, 'es-MX');
 
@@ -91,7 +92,7 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, FormsModule
   ],
   providers: [],
   bootstrap:

@@ -15,12 +15,12 @@ export class NuevaCasaComponent implements OnInit {
   ngOnInit() {
   }
 
-  registrarCasa(nombre: string, dir: string, habi: number) {
+  registrarCasa(nombre: string, dir: string, rooms: number) {
     // se crea el objeto que contiene la información de la casa
     this.info_casa = {
       nombre: nombre,
       dir: dir,
-      habi: habi
+      rooms: rooms
     };
     this.db.pushCasa(this.info_casa);
   }

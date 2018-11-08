@@ -21,7 +21,7 @@ export class DbService {
   }
 
   login(email: string, pass: string, result: (ho: any) => any) {
-    var type = '';
+    let type = '';
     if (email.includes('admin')) {
       type = 'adms';
       console.log('se intenta loguear un adm');
@@ -53,7 +53,6 @@ export class DbService {
     console.log('se loguea el administrador');
     this.router.navigate(['/home/']);
   }
-
 
   registro_due(usr: any, pass: string) {
     console.log('intentanto registrar');
@@ -110,7 +109,6 @@ export class DbService {
     }
   }
 
-
   private comprobarAdmin() {
 
 
@@ -128,12 +126,11 @@ export class DbService {
     this.router.navigate(['/login']);
   }
 
-
   private pushNewAdmInfoUser(admObj: any, uid_adm: string, uid_casa: string) {
-    this.db.object('adms/' + uid_adm).set(admObj);
+    this.db.object('casas/' + uid_casa + '/current_adm').set(admObj);
     admObj['uid_adm'] = uid_adm;
     admObj['key_casa'] = uid_casa;
-    this.db.object('casas/' + uid_casa + '/current_adm').set(admObj);
+    this.db.object('adms/' + uid_adm).set(admObj);
     console.log('se registra un nuevo adm');
   }
 
@@ -148,41 +145,54 @@ export class DbService {
     });
   }
 
-  pushCasa(basic_info_casa: {}) {
+  pushCasa(basic_info_casa: any) {
     // comprobar usuario logueado
-    const f_casa = {};
-    f_casa['info'] = f_casa;
+
+    const f_casa = basic_info_casa;
     f_casa['metadata'] = {
       reg_date: Date.now(),
       due_id: this._user.uid,
     };
-
-    const k = this.db.list('casas/').push(basic_info_casa).key;
-    basic_info_casa['id'] = k;
+    const k = this.db.list('casas/').push(f_casa).key;
+    f_casa['metadata']['id'] = k;
     this.db.list('dues/' + this._user.uid + '/casas').push(basic_info_casa);
     console.log('se ha registrado una nueva casa');
   }
 
-  getCasasUsuarioOb(): Observable<any[]> {
+  _sCasasDue(): Observable<any[]> {
     // this.item$ = this.db.object<Item>('/item').valueChanges().subscribe(item => console.log(item));
     console.log(this._user.uid);
     return this.db.list('dues/' + this._user.uid + '/casas').valueChanges();
   }
 
-  susbInfoCasa(id_casa: string): Observable<any | null> {
-    return this.db.object('casas/' + id_casa).valueChanges();
-  }
-
-  buscarAdm(id_casa: string): Observable<any | null> {
+  _sInfoAdmn(id_casa: string): Observable<any | null> {
     return this.db.object('casas/' + id_casa + '/current_adm').valueChanges();
   }
 
-  // eliminarAdm() {
-  //   this.firebaseAuth.authState.subscribe(authState => {
-  //     console.log(authState);
-  //     authState.delete()
-  //       .then(_ => console.log('deleted!'))
-  //       .catch(e => console.error(e));
-  //   });
-  // }
+  _sInfoCasa(uid_casa: any): Observable<any | null> {
+    return this.db.object('casas/' + uid_casa).valueChanges();
+  }
+
+  infoRoom(uid_casa: any, habitacion_seleccionada: number): Observable<any | null> {
+    console.log('casas/' + uid_casa + 'rooms_data/' + habitacion_seleccionada);
+
+    return this.db.object('casas/' + uid_casa + '/rooms_data/' + habitacion_seleccionada).valueChanges();
+  }
+
+  subirInqui(id_casa: string, habitacion_seleccionada: number, infoRoom: any) {
+    console.log('se sube info del inquilino');
+    this.db.object('casas/' + id_casa + '/rooms_data/' + habitacion_seleccionada).update(infoRoom);
+  }
+
+  getRoomValues(): Observable<any | null> {
+    return this.db.list('main_data/values/basic_room/').valueChanges();
+  }
+
+  pushRooms(v: any[]) {
+    this.db.object('main_data/values/basic_room/').set(v);
+  }
+
+  push_current_value(uid_casa: string, habitacion_seleccionada: number, value: any) {
+    this.db.object('casas/' + uid_casa + '/rooms_data/' + habitacion_seleccionada + '/value_selected').set(value);
+  }
 }

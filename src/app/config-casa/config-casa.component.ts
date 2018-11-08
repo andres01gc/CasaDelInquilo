@@ -29,12 +29,12 @@ export class ConfigCasaComponent implements OnInit, OnDestroy {
     const n_email = name.toLowerCase() + '.' + last_name.toLowerCase() + '@admin.inqui.com';
     const admObj: any = {name: name, last_name: last_name, email: n_email, cargo: 'adm', pass: pass};
     console.log('asldvnkldnv');
-    this.db.registro_adm(admObj, this.info_casa.id, this.infoUser);
+    this.db.registro_adm(admObj, this.info_casa.metadata.id, this.infoUser);
     this.mostrarNewAdm = false;
   }
 
   buscarAdm() {
-    this._buscarAdm = this.db.buscarAdm(this.info_casa.id).subscribe(value => {
+    this._buscarAdm = this.db._sInfoAdmn(this.info_casa.metadata.id).subscribe(value => {
         console.log(value);
         if (value) {
           console.log('si existe admn');

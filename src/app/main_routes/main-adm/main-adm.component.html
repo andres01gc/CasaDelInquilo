@@ -2,7 +2,7 @@
   <!--<div class="bt" (click)="abrirHabitacion()"> Boton Habitacion</div>-->
   <div class="habi_tit">Habitaciones</div>
   <div class="habi_content">
-    <div class="habi" *ngFor='let in of counter(cantidadHabitaciones) ;let i = index' (click)="abrirHabitacion(i)">
+    <div class="habi" *ngFor="let in of counter(rooms) ;let i = index" (click)="abrirHabitacion(i+1)">
       <div>{{i+1}}</div>
     </div>
   </div>

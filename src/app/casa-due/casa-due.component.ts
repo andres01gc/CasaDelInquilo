@@ -22,9 +22,10 @@ export class CasaDueComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sus_habi = this.active_route.params.subscribe(params => {
       this.id_casa = params['id_casa'];
-      this.susInfoCasa = this.db.susbInfoCasa(this.id_casa).subscribe(value => {
+      this.susInfoCasa = this.db._sInfoCasa(this.id_casa).subscribe(value => {
         this.infoCasa = value;
-        this.infoCasa['id'] = this.id_casa;
+        // agrego el id, pues no lo envio en primera instancia con él.
+        this.infoCasa.metadata['id'] = this.id_casa;
         this.current.info_casa = this.infoCasa;
       });
     });

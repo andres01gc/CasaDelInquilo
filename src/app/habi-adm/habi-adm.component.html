@@ -1,59 +1,73 @@
-<div class="cnt">
+<div class="cnt" *ngIf="!isNew">
   <div class="hb_ttl">
     <div class="bt_atras" routerLink="../../">Atrás</div>
     <div>
       <h2 class="ttl_hb">Habitación #{{habitacion_seleccionada}}</h2>
       <div>Estado: Al dia :)</div>
     </div>
-
   </div>
 
   <div class="info_habi_container">
     <div class="sas">
       <div class="info_habi_img"></div>
       <div>
-        <div class="info_habi_nombre">Camilo Rojas Pc</div>
+        <div class="info_habi_nombre">{{info_room.name}} {{info_room.last_name}}</div>
         <div class="doc_cnt">
-          <div class="info_habi_tipo_doc">CC</div>
-          <div class="info_habi_doc">115.654.856</div>
+          <div class="info_habi_tipo_doc">{{info_room.tipo}}</div>
+          <div class="info_habi_doc">{{info_room.doc}}</div>
         </div>
 
+        <select name="Suscripción"
+                class="select_sus"
+                [(ngModel)]="value_selected"
+                (ngModelChange)="onChangeValue($event)">
 
-        <select name="Suscripción" class="select_sus">
-          <option value=""><strong>Solo </strong>($4500)</option>
-          <option value=""><strong>Acompañado </strong>($8500)</option>
+          <option
+            *ngFor="let r of room_values; let i = index"
+            [ngValue]="r">
+            {{r.name}}<strong>
+            ({{r.value}})</strong>
+          </option>
+
         </select>
-        <!--<div class="bt_finalizar">Finalizar Estadia</div>-->
+
       </div>
     </div>
 
     <div class="datos_content">
-
       <div class="saldo_cnt">
         <div class="sa">Precio del dia</div>
-        <div class="ja">$ 5.895</div>
+        <div class="ja">${{value_selected.value}}</div>
       </div>
 
       <div class="dias">
         <div class="sa">Dias</div>
-        <div class="ja">256</div>
+        <div class="ja">{{dias_vivos}}</div>
       </div>
 
       <div class="saldo_cnt">
         <div class="sa">Saldo</div>
-        <div class="ja">$ 5.895</div>
+        <div class="ja">{{saldo_a_favor}}</div>
       </div>
-
     </div>
-
-
   </div>
-
 
   <div class="nuevo_pago_cnt">
     <p class="ns">Nuevo pago</p>
     <input type="text" placeholder=" $ valor" class="valor">
     <div class="agregar">Agregar Registro</div>
   </div>
+</div>
+
+<div *ngIf="isNew">
+  <h1>Oh, parece que no hay nada de info en la room #{{habitacion_seleccionada}}</h1>
+
+  <input type="text" #name placeholder="Nombre">
+  <input type="text" #apellidos placeholder="Apellidos">
+  <input type="text" #tipo placeholder="Tipo">
+  <input type="text" #doc placeholder="Documento">
+
+  <button (click)="startRoom(name.value, apellidos.value, tipo.value, doc.value)">Ingresar datos</button>
+
 
 </div>

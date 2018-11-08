@@ -16,7 +16,7 @@ export class MainDueComponent implements OnInit, OnDestroy {
   casaSelected: any;
 
   constructor(private db: DbService, private router: Router) {
-    this._casas = this.db.getCasasUsuarioOb();
+    this._casas = this.db._sCasasDue();
     this.info_user = db.infoUserLogueado;
   }
 
@@ -29,7 +29,8 @@ export class MainDueComponent implements OnInit, OnDestroy {
 
   AbrirCasa(casa: any) {
     this.casaSelected = casa;
-    this.router.navigate(['due/casa', casa.id]);
+    console.log(casa);
+    this.router.navigate(['due/casa', casa.metadata.id]);
   }
 
   cerrarSesion() {
