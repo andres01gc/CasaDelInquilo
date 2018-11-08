@@ -1,3 +1,21 @@
-<p>
-  config-casa works!
-</p>
+<h1>Administración</h1>
+<div class="adm_cnt" *ngIf="!mostrarNewAdm">
+  <div class="_img"></div>
+  <div class="info_adm">
+    <p><strong>{{infoUser.name}} {{infoUser.last_name}}</strong></p>
+    <p>{{infoUser.email}}</p>
+    <div class="elim_adm" (click)="eliminarAdm()">Eliminar administrador</div>
+  </div>
+</div>
+
+<div *ngIf="mostrarNewAdm">
+  <h3>Nuevo administrador</h3>
+  <input type="name" #name placeholder="Nombre">
+  <input type="name" #apellidos placeholder="Apellidos">
+  <input type="password" #pass placeholder="nueva contrasena">
+
+  <button (click)="crearAdministrador(name.value,apellidos.value, pass.value)">Crear nuevo administrador
+  </button>
+
+</div>
+

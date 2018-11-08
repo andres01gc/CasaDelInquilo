@@ -55,7 +55,6 @@ const appRoutes: Routes = [
 
 // {
 //   path: '', component: CasaDueComponent, children: [
-
 // },
 
 const config = {

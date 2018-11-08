@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {DbService} from '../../db.service';
+import {DbService} from '../../services/db.service';
 import {Observable} from 'rxjs';
 import {SnapshotAction} from '@angular/fire/database';
 

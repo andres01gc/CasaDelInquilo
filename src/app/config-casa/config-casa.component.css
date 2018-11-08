@@ -1,0 +1,54 @@
+:host {
+  margin: 1em;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  /*background-color: #3a3a3a;*/
+}
+
+input {
+  padding: .5em;
+  margin: .5em;
+  border: #cccccc 1px solid;
+  border-radius: .2em;
+  width: 15em;
+  font-size: 1em;
+}
+
+.correito {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  display: inline;
+}
+
+.adm_cnt {
+  display: flex;
+  width: auto;
+  background-color: #f9f9f9;
+  align-items: center;
+  border-radius: .4em;
+  margin-top: .5em;
+}
+
+._img {
+  display: flex;
+  width: 4em;
+  height: 4em;
+  margin: 1em;
+  background-color: #bad3e8;
+  border-radius: 10em;
+}
+
+.info_adm {
+  margin: 1em
+}
+
+.elim_adm {
+  color: lightslategray;
+  cursor: pointer;
+}
+
+.elim_adm:hover {
+  color: red;
+}

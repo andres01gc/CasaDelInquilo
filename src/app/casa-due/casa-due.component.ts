@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
-import {DbService} from '../db.service';
+import {DbService} from '../services/db.service';
+import {CurrentService} from '../current.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class CasaDueComponent implements OnInit, OnDestroy {
   private susInfoCasa: Subscription;
   infoCasa: any = [];
 
-  constructor(private active_route: ActivatedRoute, private db: DbService) {
+  constructor(private active_route: ActivatedRoute, private db: DbService, private current: CurrentService) {
   }
 
   ngOnInit() {
@@ -23,7 +24,8 @@ export class CasaDueComponent implements OnInit, OnDestroy {
       this.id_casa = params['id_casa'];
       this.susInfoCasa = this.db.susbInfoCasa(this.id_casa).subscribe(value => {
         this.infoCasa = value;
-        console.log(this.infoCasa);
+        this.infoCasa['id'] = this.id_casa;
+        this.current.info_casa = this.infoCasa;
       });
     });
   }

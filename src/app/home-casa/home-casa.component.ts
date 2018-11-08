@@ -14,10 +14,10 @@ export class HomeCasaComponent implements OnInit {
   chart = [];
 
   constructor() {
+
   }
 
   ngOnInit() {
-
     // this.dailyForecast()
     //   .subscribe(res => {
     //     console.log(res);
@@ -63,7 +63,6 @@ export class HomeCasaComponent implements OnInit {
     //         }
     //       }
     //     });
-    //
     //   });
   }
 
